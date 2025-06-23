@@ -1,376 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Salami - AI/ML Engineer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Add this before closing head tag -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="js/animations.js" defer></script>
+</head>
 
-    <title>Michael Salami - AI & ML Engineer Portfolio</title>
-<!--
-Reflux Template
-https://templatemo.com/tm-531-reflux
--->
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link"><span class="nav__text">About</span></a></li>
+          <li><a href="#skills" class="nav__link"><span class="nav__text">Skills</span></a></li>
+          <li><a href="#projects" class="nav__link"><span class="nav__text">Projects</span></a></li>
+          <li><a href="#contact" class="nav__link"><span class="nav__text">Contact</span></a></li>
+        </ul>
+      </nav>
+      
+      <!-- Update theme toggle button -->
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.css" />
-  </head>
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <div class="container hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">Turning Data Into Intelligent Solutions</h1>
+        <h2 class="hero__subtitle">AI/ML Engineer | Computer Vision Specialist</h2>
+        <p class="hero__description">Building the future of agriculture and healthcare through artificial intelligence</p>
+        <div class="hero__buttons">
+          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#contact" class="btn btn--outline">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <body>
-    <div id="page-wraper">
-      <!-- Sidebar Menu -->
-      <div class="responsive-nav">
-        <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
-          <i class="fa fa-times" id="menu-close"></i>
-          <div class="container">
-            <div class="image">
-              <a href="#"><img src="assets/images/image.jpeg" alt="" /></a>
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section__title">About Me</h2>
+      <div class="about__content">
+        <div class="about__image">
+          <img src="assets/images/image.jpeg" alt="Michael Salami" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="about__text">
+          <p>I'm Michael Salami, an AI/ML Engineer with 5+ years of experience developing innovative models and solutions to solve complex business challenges. My expertise spans computer vision, natural language processing, and predictive analytics.</p>
+          <p>I specialize in:</p>
+          <ul class="about__list">
+            <li>Building and deploying machine learning models</li>
+            <li>Developing AI-powered applications for agriculture and healthcare</li>
+            <li>Creating data pipelines and MLOps workflows</li>
+            <li>Optimizing models for edge devices</li>
+          </ul>
+          <p>My work has helped farmers increase crop yields by 30% through AI-powered disease detection and predictive analytics. I'm passionate about leveraging technology to solve real-world problems and make a positive impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section__title">Technical Expertise</h2>
+      <p class="section__subtitle">Core competencies and specialized skills</p>
+      
+      <div class="skills__grid">
+        <div class="skill-category">
+          <h3>AI & Machine Learning</h3>
+          <div class="skill-bar" data-percent="95">
+            <img src="assets/icons/tensorflow.svg" alt="TensorFlow" loading="lazy">
+            <span class="skill-name">TensorFlow/PyTorch</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-bar" data-percent="90">
+            <img src="assets/icons/pytorch.svg" alt="PyTorch" loading="lazy">
+            <span class="skill-name">Computer Vision</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar" data-percent="85">
+            <img src="assets/icons/python.svg" alt="NLP" loading="lazy">
+            <span class="skill-name">Natural Language Processing</span>
+            <span class="skill-percent">85%</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Data Science</h3>
+          <div class="skill-bar" data-percent="95">
+            <img src="assets/icons/python.svg" alt="Python" loading="lazy">
+            <span class="skill-name">Pandas/Numpy</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-bar" data-percent="90">
+            <img src="assets/icons/python.svg" alt="Python" loading="lazy">
+            <span class="skill-name">Data Visualization</span>
+            <span class="skill-percent">90%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tools-grid">
+        <div class="tool-item">
+          <img src="assets/icons/python.svg" alt="Python" loading="lazy">
+          <span>Python</span>
+        </div>
+        <div class="tool-item">
+          <img src="assets/icons/tensorflow.svg" alt="TensorFlow" loading="lazy">
+          <span>TensorFlow</span>
+        </div>
+        <div class="tool-item">
+          <img src="assets/icons/pytorch.svg" alt="PyTorch" loading="lazy">
+          <span>PyTorch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section__title">Featured Projects</h2>
+      <p class="section__subtitle">Real-world AI solutions making measurable impact</p>
+      
+      <div class="projects__grid">
+        <div class="project-card">
+          <div class="project-card__content">
+            <h3 class="project-card__title">Leaf Doctor AI</h3>
+            <div class="project-card__tags">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Disease Detection</span>
             </div>
-            <div class="author-content">
-              <h4>Michael Salami</h4>
-              <span>AI & Machine Learning Engineer</span>
+            <p class="project-card__description">
+              Real-time plant disease identification using deep learning with 92% accuracy
+            </p>
+            <div class="project-card__links">
+              <a href="https://leafdoctor.org" class="btn btn--primary" target="_blank">View Live Demo</a>
+              <a href="https://github.com/olamiketech/Leaf-doctor" class="btn btn--outline" target="_blank">GitHub Repo</a>
             </div>
-            <nav class="main-nav" role="navigation">
-              <ul class="main-menu">
-                <li><a href="#section1">About Me</a></li>
-                <li><a href="#section2">What I’m good at</a></li>
-                <li><a href="#section3">My Work</a></li>
-                <li><a href="#section4">Contact Me</a></li>
-              </ul>
-            </nav>
-            <div class="social-network">
-              <ul class="soial-icons">
-                <li>
-                  <a href="https://twitter.com/olamiketech"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/michael-s-4b1a6518b/"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/olamiketech"><i class="fa fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.youtube.com/channel/UCbe2mZ8SMockzxZWrYh4KZQ"><i class="fa fa-youtube"></i></a>
-                </li>
-              </ul>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-card__content">
+            <h3 class="project-card__title">AgroPredict AI</h3>
+            <div class="project-card__tags">
+              <span class="tag">Predictive Analytics</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">Sustainable Ag</span>
             </div>
-            <div class="copyright-text">
-              <p>Copyright 2024 Olamike Design</p>
+            <p class="project-card__description">
+              AI-powered recommendations increasing crop yields by 30% on average
+            </p>
+            <div class="project-card__links">
+              <a href="https://agropredictai.com" class="btn btn--primary" target="_blank">View Live Demo</a>
+              <a href="https://github.com/olamiketech/farming-advice-app" class="btn btn--outline" target="_blank">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-card__content">
+            <h3 class="project-card__title">ElectroGadget AI Chatbot</h3>
+            <div class="project-card__tags">
+              <span class="tag">NLP</span>
+              <span class="tag">Chatbot</span>
+              <span class="tag">Retail</span>
+            </div>
+            <p class="project-card__description">
+              AI-powered customer support chatbot for electronics retailers
+            </p>
+            <div class="project-card__links">
+              <a href="https://github.com/olamiketech/ElectroGadget_AI_Chatbot" class="btn btn--outline" target="_blank">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-card__content">
+            <h3 class="project-card__title">E-commerce Analytics</h3>
+            <div class="project-card__tags">
+              <span class="tag">Data Science</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Visualization</span>
+            </div>
+            <p class="project-card__description">
+              Sales forecasting and customer segmentation for e-commerce
+            </p>
+            <div class="project-card__links">
+              <a href="https://github.com/olamiketech/store_project" class="btn btn--outline" target="_blank">GitHub Repo</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <section class="section about-me" data-section="section1">
-        <div class="container">
-          <div class="section-heading">
-            <h2>About Me</h2>
-            <div class="line-dec"></div>
-            <span
-              >"Passionate Data Science and Machine Learning Engineer 
-              skilled in developing innovative models and solutions to solve complex business challenges.</span
-            >
-          </div>
-          <div class="left-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-image">
-                  <img src="assets/images/left_image.jpeg" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-text">
-                  <h4>Michael Salami</h4>
-                  <p>
-                    AI & Machine Learning Engineer
-                     passionate about leveraging technology 
-                     to solve complex problems and make a positive impact..
-                  </p>
-                  <div class="white-button">
-                    <a href="https://www.linkedin.com/in/michael-s-4b1a6518b/">Read More</a>
-                  </div>
-                </div>
-              </div>
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section__title">Get In Touch</h2>
+      <p class="section__subtitle">Let's discuss how I can help with your AI/ML needs</p>
+      
+      <div class="contact__grid">
+        <div class="contact__form">
+          <form action="https://formsubmit.co/your@email.com" method="POST" class="form">
+            <div class="form__group">
+              <input type="text" name="name" placeholder="Your Name" required>
             </div>
-          </div>
-          <div class="right-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-text">
-                  <h4>Skills</h4>
-                  <p>
-                    Programming Languages: Python, R, Java <br>
-                    Data Analysis Tools: Pandas, NumPy, MatplotLib, Scikit-Learn, PowerBI <br>
-                    Databases: SQL, MySQL <br>
-                    Cloud Platforms: Microsoft Azure, Google Cloud Platform <br>
-                    Other Tools: Git, Docker, Jupyter Notebook, Microsoft Fabric <br>
-                    Soft Skills: Problem-Solving, Team Collaboration, Communication, Critical Thinking.
-                  </p>
-                  <div class="white-button">
-                    <a href="https://github.com/olamiketech">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-image">
-                  <img src="assets/images/right.webp" alt="" />
-                </div>
-              </div>
+            <div class="form__group">
+              <input type="email" name="email" placeholder="Your Email" required>
             </div>
+            <div class="form__group">
+              <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="contact__info">
+          <div class="contact__card">
+            <svg><!-- Email icon --></svg>
+            <h3>Email</h3>
+            <a href="mailto:olamike077@gmail.com">olamike077@gmail.com</a>
+          </div>
+          
+          <div class="contact__card">
+            <svg><!-- Phone icon --></svg>
+            <h3>Phone</h3>
+            <a href="tel:+447823583837">+44 7823 583837</a>
+          </div>
+          
+          <div class="contact__card">
+            <svg><!-- Location icon --></svg>
+            <h3>Location</h3>
+            <p>Scotland, United Kingdom</p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="section my-services" data-section="section2">
-        <div class="container">
-          <div class="section-heading">
-            <h2>What I’m good at?</h2>
-            <div class="line-dec"></div>
-            <span
-              >Proficient in Excel, SQL, Python, R, Microsoft Fabric, TensorFlow, PyTorch, LLMs; skilled in machine learning, 
-              data analysis, Generative AI, project management, public speaking, and STEM education..</span
-            >
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="first-service-icon service-icon"></div>
-                <h4>Artificial Intelligence</h4>
-                <p>
-                  Artificial Intelligence (AI) refers to the simulation of human intelligence in machines
-                  that are programmed to think like humans and mimic their actions.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="second-service-icon service-icon"></div>
-                <h4>Machine Learning</h4>
-                <p>
-                  Machine Learning (ML) is a subset of artificial intelligence (AI) 
-                  focused on building systems that learn from data. 
-                  Instead of being explicitly programmed to perform a task, 
-                  these systems are designed to learn and improve from experience.
-                </p>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="third-service-icon service-icon"></div>
-                <h4>Deep Learning</h4>
-                <p>
-                  Deep Learning is a subset of machine learning that involves
-                  algorithms inspired by the structure and function of
-                  the brain called artificial neural networks.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="fourth-service-icon service-icon"></div>
-                <h4>Data Science</h4>
-                <p>
-                  Data Science is an interdisciplinary field that uses scientific methods, 
-                  processes, algorithms, 
-                  and systems to extract knowledge and insights from structured and unstructured data. 
-                  It combines aspects of statistics, 
-                  mathematics, programming, and domain expertise to analyze data for decision making.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    
-          
-      <section class="section my-work" data-section="section3">
-        <div class="container">
-          <div class="section-heading">
-              <div class="container">
-                  <div class="section-heading text-center">
-                      <h2>My Work</h2>
-                      <div class="line-dec"></div>
-                      <span>Data Science & Machine Learning Engineer skilled in Python, TensorFlow, data analysis, and feature engineering, with expertise in predictive analytics, model optimization, and AI/ML workshops, enhancing team collaboration and innovation.</span>
-                  </div>
-                  <div class="row">
-                      <!-- Project 1 -->
-                      <div class="col-md-4 project-card">
-                          <div class="card">
-                              <img src="assets/images/1.webp" class="card-img-top" alt="Project 1 Image">
-                              <div class="card-body">
-                                  <h5 class="card-title">AI Project</h5>
-                                  <p class="card-text">Brief description of the AI project.</p>
-                                  <a href="https://github.com/olamiketech" class="btn btn-primary" target="_blank">View Project</a>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Project 2 -->
-                      <div class="col-md-4 project-card">
-                          <div class="card">
-                              <img src="assets/images/3.webp" class="card-img-top" alt="Project 2 Image">
-                              <div class="card-body">
-                                  <h5 class="card-title">Machine Learning Engineer</h5>
-                                  <p class="card-text">Brief description of the Machine Learning project.</p>
-                                  <a href="https://github.com/olamiketech" class="btn btn-primary" target="_blank">View Project</a>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Project 3 -->
-                      <div class="col-md-4 project-card">
-                          <div class="card">
-                              <img src="assets/images/4.webp" class="card-img-top" alt="Project 3 Image">
-                              <div class="card-body">
-                                  <h5 class="card-title">Computer Vision Specialist</h5>
-                                  <p class="card-text">Brief description of the Computer Vision project.</p>
-                                  <a href="https://github.com/olamiketech" class="btn btn-primary" target="_blank">View Project</a>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Project 4 -->
-                      <div class="col-md-4 project-card">
-                          <div class="card">
-                              <img src="assets/images/5.webp" class="card-img-top" alt="Project 4 Image">
-                              <div class="card-body">
-                                  <h5 class="card-title">Prompt Engineering</h5>
-                                  <p class="card-text">Brief description of the Prompt Engineering project.</p>
-                                  <a href="https://www.youtube.com/channel/UCbe2mZ8SMockzxZWrYh4KZQ" class="btn btn-primary" target="_blank">View Project</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-        
-              <section class="section contact-me" data-section="section4">
-                  <div class="container">
-                      <div class="section-heading">
-                          <h2>Contact Me</h2>
-                          <div class="line-dec"></div>
-                          <span>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to get in touch with me.</span>
-                      </div>
-                      <div class="row">
-                          <div class="right-content">
-                              <div class="container">
-                                  <form id="contact" action="/thank/" method="post" data-netlify="true" netlify-honeypot="bot-field">
-                                      <div class="row">
-                                          <div class="col-md-6">
-                                              <fieldset>
-                                                  <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required />
-                                              </fieldset>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <fieldset>
-                                                  <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required />
-                                              </fieldset>
-                                          </div>
-                                          <div class="col-md-12">
-                                              <fieldset>
-                                                  <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required />
-                                              </fieldset>
-                                          </div>
-                                          <div class="col-md-12">
-                                              <fieldset>
-                                                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required></textarea>
-                                              </fieldset>
-                                          </div>
-                                          <div class="col-md-12">
-                                              <fieldset>
-                                                  <button type="submit" id="form-submit" class="button">Send Message</button>
-                                              </fieldset>
-                                          </div>
-                                      </div>
-                                      <!-- Netlify bot field for spam protection -->
-                                      <div style="display:none;">
-                                          <input type="text" name="bot-field" />
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-          
-              <!-- Bootstrap JavaScript libraries -->
-              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        
-          
-
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-      //according to loftblog tut
-      $(".main-menu li:first").addClass("active");
-
-      var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ""),
-          reqSection = $(".section").filter(
-            '[data-section="' + direction + '"]'
-          ),
-          reqSectionPos = reqSection.offset().top - 0;
-
-        if (isAnimate) {
-          $("body, html").animate(
-            {
-              scrollTop: reqSectionPos
-            },
-            800
-          );
-        } else {
-          $("body, html").scrollTop(reqSectionPos);
-        }
-      };
-
-      var checkSection = function checkSection() {
-        $(".section").each(function() {
-          var $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-          if (topEdge < wScroll && bottomEdge > wScroll) {
-            var currentId = $this.data("section"),
-              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-            reqLink
-              .closest("li")
-              .addClass("active")
-              .siblings()
-              .removeClass("active");
-          }
-        });
-      };
-
-      $(".main-menu").on("click", "a", function(e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
-
-      $(window).scroll(function() {
-        checkSection();
-      });
-    </script>
-  </body>
+  <!-- Scripts -->
+  <script src="js/main.js" type="module"></script>
+</body>
 </html>
