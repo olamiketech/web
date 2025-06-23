@@ -1,0 +1,117 @@
+/* =============================================
+   Responsive Overrides & Fixes (2025-06-23)
+   ---------------------------------------------
+   This stylesheet is loaded AFTER styles.css and
+   therefore safely overrides any conflicting
+   declarations without requiring changes to the
+   large, duplicated base file.
+   ============================================= */
+
+/* Hide outdated project cards accidentally left inside the hero section */
+.hero .project-card {
+  display: none !important;
+}
+
+/* Standardise container width for very large screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* -------------------------------------------------
+   Global Typography & Spacing Tweaks for Small View
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  /* Reduce section padding */
+  .section {
+    padding: 3rem 0;
+  }
+  /* Stack header items neatly */
+  .header .container {
+    padding: 0 1rem;
+  }
+}
+
+/* --------------------------------
+   Projects Section – New Grid Layout
+   -------------------------------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Ensure every project card fills its grid cell */
+.project-card {
+  height: 100%;
+}
+
+/* --------------------------------
+   Contact Section adjustments
+   -------------------------------- */
+@media (min-width: 992px) {
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+@media (max-width: 991px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skip-link accessibility */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  z-index: 2000;
+  transition: left 0.3s ease;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+}
+
+/* Prevent horizontal overflow caused by long words / URLs */
+body {
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+/* Ensure sections are visible even if JavaScript is disabled or slow */
+.section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Disable the animated gradient background on mobile/tablet to speed up paint and reduce battery usage */
+@media (max-width: 991px) {
+  body::before {
+    display: none !important;
+    content: none !important;
+  }
+}

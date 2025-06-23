@@ -108,13 +108,22 @@ function initParticles() {
 
 // Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  initParticles();
-  
-  // Add fade-in class to hero section
+  // Defer expensive particle effect to idle time and only on large screens
+  const loadParticles = () => {
+    if (window.innerWidth > 1024) {
+      initParticles();
+    }
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadParticles);
+  } else {
+    // Fallback
+    setTimeout(loadParticles, 1200);
+  }
+
+  // Immediately reveal hero section (CSS already handles other sections)
   const hero = document.querySelector('.hero');
   if (hero) {
-    setTimeout(() => {
-      hero.classList.add('fade-in');
-    }, 300);
+    hero.classList.add('fade-in');
   }
 });

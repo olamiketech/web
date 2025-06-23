@@ -1,180 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Salami - AI/ML Engineer</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  
-  <!-- Add this before closing head tag -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="js/animations.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="description" content="Professional portfolio showcasing my work and skills">
+    <title>Michael Salami - AI/ML Engineer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.ico">
 </head>
-
 <body>
-  <!-- Header/Navigation -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="#about" class="nav__link"><span class="nav__text">About</span></a></li>
-          <li><a href="#skills" class="nav__link"><span class="nav__text">Skills</span></a></li>
-          <li><a href="#projects" class="nav__link"><span class="nav__text">Projects</span></a></li>
-          <li><a href="#contact" class="nav__link"><span class="nav__text">Contact</span></a></li>
-        </ul>
-      </nav>
-      
-      <!-- Update theme toggle button -->
-      <button class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero fade-in">
-    <div class="container hero__container">
-      <div class="hero__content">
-        <h1 class="hero__title">Turning Data Into Intelligent Solutions</h1>
-        <h2 class="hero__subtitle">AI/ML Engineer | Computer Vision Specialist</h2>
-        <p class="hero__description">Building the future of agriculture and healthcare through artificial intelligence</p>
-        <div class="hero__buttons">
-          <a href="#projects" class="btn btn--primary">View My Work</a>
-          <a href="#contact" class="btn btn--outline">Contact Me</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" aria-label="Home">
+                <span>Michael Salami</span>
+            </a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <span class="sr-only">Toggle dark mode</span>
+            </button>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Turning Data Into Intelligent Solutions</h1>
+                <h2 class="hero__subtitle">AI/ML Engineer | Computer Vision Specialist</h2>
+                <p class="hero__description">Building the future of agriculture and healthcare through artificial intelligence</p>
+                <div class="hero__buttons">
+                    <a href="#projects" class="btn btn--primary">View My Work</a>
+                    <a href="#contact" class="btn btn--outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
   <!-- About Section -->
-  <section id="about" class="section about">
+  <section id="about" class="section about fade-in">
     <div class="container">
       <h2 class="section__title">About Me</h2>
       <div class="about__content">
         <div class="about__image">
-          <img src="assets/images/image.jpeg" alt="Michael Salami" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+          <img src="assets/images/image.jpeg" alt="Portrait of Michael Salami">
         </div>
         <div class="about__text">
-          <p>I'm Michael Salami, an AI/ML Engineer with 5+ years of experience developing innovative models and solutions to solve complex business challenges. My expertise spans computer vision, natural language processing, and predictive analytics.</p>
-          <p>I specialize in:</p>
+          <p>I’m an AI/ML engineer passionate about building intelligent products that create real-world impact. I’ve delivered computer-vision solutions for agriculture, healthcare, and retail.</p>
           <ul class="about__list">
-            <li>Building and deploying machine learning models</li>
-            <li>Developing AI-powered applications for agriculture and healthcare</li>
-            <li>Creating data pipelines and MLOps workflows</li>
-            <li>Optimizing models for edge devices</li>
+            <li>5+ years experience delivering end-to-end AI products</li>
+            <li>MSc Artificial Intelligence, University of Strathclyde</li>
+            <li>AWS Certified Solutions Architect – Associate</li>
           </ul>
-          <p>My work has helped farmers increase crop yields by 30% through AI-powered disease detection and predictive analytics. I'm passionate about leveraging technology to solve real-world problems and make a positive impact.</p>
+          <a href="assets/MSalami.pdf" class="btn btn--primary" target="_blank">Download CV</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="section skills fade-in">
     <div class="container">
-      <h2 class="section__title">Technical Expertise</h2>
-      <p class="section__subtitle">Core competencies and specialized skills</p>
-      
+      <h2 class="section__title">Technical Skills</h2>
       <div class="skills__grid">
         <div class="skill-category">
-          <h3>AI & Machine Learning</h3>
-          <div class="skill-bar" data-percent="95">
-            <img src="assets/icons/tensorflow.svg" alt="TensorFlow" loading="lazy">
-            <span class="skill-name">TensorFlow/PyTorch</span>
-            <span class="skill-percent">95%</span>
-          </div>
-          <div class="skill-bar" data-percent="90">
-            <img src="assets/icons/pytorch.svg" alt="PyTorch" loading="lazy">
-            <span class="skill-name">Computer Vision</span>
-            <span class="skill-percent">90%</span>
-          </div>
-          <div class="skill-bar" data-percent="85">
-            <img src="assets/icons/python.svg" alt="NLP" loading="lazy">
-            <span class="skill-name">Natural Language Processing</span>
-            <span class="skill-percent">85%</span>
-          </div>
+          <h3>Languages &amp; Libraries</h3>
+          <ul class="skills-list">
+            <li class="skill-item"><i class="fab fa-python" aria-hidden="true"></i>Python</li>
+            <li class="skill-item"><i class="fab fa-js" aria-hidden="true"></i>JavaScript</li>
+            <li class="skill-item"><i class="fab fa-html5" aria-hidden="true"></i>HTML5</li>
+            <li class="skill-item"><i class="fab fa-css3-alt" aria-hidden="true"></i>CSS3</li>
+          </ul>
         </div>
-        
         <div class="skill-category">
-          <h3>Data Science</h3>
-          <div class="skill-bar" data-percent="95">
-            <img src="assets/icons/python.svg" alt="Python" loading="lazy">
-            <span class="skill-name">Pandas/Numpy</span>
-            <span class="skill-percent">95%</span>
-          </div>
-          <div class="skill-bar" data-percent="90">
-            <img src="assets/icons/python.svg" alt="Python" loading="lazy">
-            <span class="skill-name">Data Visualization</span>
-            <span class="skill-percent">90%</span>
-          </div>
+          <h3>AI &amp; ML</h3>
+          <ul class="skills-list">
+            <li class="skill-item"><img src="assets/icons/pytorch.svg" alt="" width="20" height="20">PyTorch</li>
+            <li class="skill-item"><img src="assets/icons/tensorflow.svg" alt="" width="20" height="20">TensorFlow</li>
+            <li class="skill-item"><i class="fas fa-brain" aria-hidden="true"></i>Computer Vision</li>
+            <li class="skill-item"><i class="fas fa-language" aria-hidden="true"></i>NLP</li>
+          </ul>
         </div>
-      </div>
-      
-      <div class="tools-grid">
-        <div class="tool-item">
-          <img src="assets/icons/python.svg" alt="Python" loading="lazy">
-          <span>Python</span>
-        </div>
-        <div class="tool-item">
-          <img src="assets/icons/tensorflow.svg" alt="TensorFlow" loading="lazy">
-          <span>TensorFlow</span>
-        </div>
-        <div class="tool-item">
-          <img src="assets/icons/pytorch.svg" alt="PyTorch" loading="lazy">
-          <span>PyTorch</span>
+        <div class="skill-category">
+          <h3>Cloud &amp; DevOps</h3>
+          <ul class="skills-list">
+            <li class="skill-item"><i class="fab fa-aws" aria-hidden="true"></i>AWS</li>
+            <li class="skill-item"><i class="fab fa-docker" aria-hidden="true"></i>Docker</li>
+            <li class="skill-item"><i class="fab fa-github" aria-hidden="true"></i>GitHub&nbsp;Actions</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="section projects">
+  <section id="projects" class="section projects fade-in">
     <div class="container">
-      <h2 class="section__title">Featured Projects</h2>
-      <p class="section__subtitle">Real-world AI solutions making measurable impact</p>
-      
+      <h2 class="section__title">Projects</h2>
       <div class="projects__grid">
-        <div class="project-card">
-          <div class="project-card__content">
-            <h3 class="project-card__title">Leaf Doctor AI</h3>
-            <div class="project-card__tags">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">Disease Detection</span>
-            </div>
-            <p class="project-card__description">
-              Real-time plant disease identification using deep learning with 92% accuracy
-            </p>
-            <div class="project-card__links">
-              <a href="https://leafdoctor.org" class="btn btn--primary" target="_blank">View Live Demo</a>
-              <a href="https://github.com/olamiketech/Leaf-doctor" class="btn btn--outline" target="_blank">GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-        
+        <!-- Project cards -->
         <div class="project-card">
           <div class="project-card__content">
             <h3 class="project-card__title">AgroPredict AI</h3>
@@ -192,7 +141,6 @@
             </div>
           </div>
         </div>
-        
         <div class="project-card">
           <div class="project-card__content">
             <h3 class="project-card__title">ElectroGadget AI Chatbot</h3>
@@ -209,7 +157,6 @@
             </div>
           </div>
         </div>
-        
         <div class="project-card">
           <div class="project-card__content">
             <h3 class="project-card__title">E-commerce Analytics</h3>
@@ -274,6 +221,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Scripts -->
   <script src="js/main.js" type="module"></script>
