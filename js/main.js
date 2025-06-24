@@ -111,24 +111,35 @@ function closeMobileMenu() {
     }
 }
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', toggleTheme);
-}
-// Mobile menu toggle
-if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-}
+
 
 // Initialize active link on page load
 document.addEventListener('DOMContentLoaded', () => {
   // Initialise theme & smooth scrolling
   initTheme();
   initSmoothScrolling();
+  // Attach theme and mobile toggle listeners
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
   const navLinks = document.querySelectorAll('.nav__link');
   if (navLinks.length > 0) {
     navLinks[0].classList.add('active');
   }
+
+  // Scrollspy to highlight active nav links
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.6 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const navLink = document.querySelector(`.nav__link[href="#${id}"]`);
+      if (entry.isIntersecting && navLink) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        navLink.classList.add('active');
+      }
+    });
+  }, observerOptions);
+  sections.forEach(section => observer.observe(section));
 });
 
 // GitHub API Integration

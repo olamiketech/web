@@ -115,3 +115,50 @@ body {
     content: none !important;
   }
 }
+
+/* Desktop Navigation Override */
+@media (min-width: 769px) {
+  .nav {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .nav__list {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem !important;
+  }
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile Navigation Override */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  .nav {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease-in-out !important;
+    z-index: 1001 !important;
+  }
+  .nav.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav__list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+  }
+}
