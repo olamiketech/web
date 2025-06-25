@@ -162,3 +162,19 @@ body {
     padding: 1.5rem !important;
   }
 }
+
+/* About Section Mobile Fix */
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .about__image {
+    max-width: 300px !important;
+    margin: 0 auto 1.5rem !important;
+  }
+  .about__text {
+    text-align: center !important;
+  }
+}
