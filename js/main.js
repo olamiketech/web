@@ -191,10 +191,4 @@ async function fetchGitHubData() {
   }
 }
 
-// Call when DOM is loaded
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(fetchGitHubData);
-} else {
-  // Fallback for browsers without requestIdleCallback
-  window.addEventListener('load', () => setTimeout(fetchGitHubData, 1500));
-}
+
