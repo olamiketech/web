@@ -354,7 +354,144 @@
 
   </main>
 
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget">
+    <button class="chatbot-toggle" aria-label="Open career chatbot" id="chatbotToggle">
+      <i class="fas fa-comments" aria-hidden="true"></i>
+      <span class="chatbot-pulse"></span>
+    </button>
+    <div class="chatbot-modal" id="chatbotModal" role="dialog" aria-modal="true" aria-labelledby="chatbotTitle" aria-hidden="true">
+      <div class="chatbot-header">
+        <h3 id="chatbotTitle">Chat with Michael's Career Agent</h3>
+        <button class="chatbot-close" aria-label="Close chatbot" id="chatbotClose">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="chatbot-content">
+        <iframe 
+          src="https://mikecareeragent.up.railway.app/" 
+          title="Career Chatbot"
+          frameborder="0"
+          allow="microphone; camera"
+          id="chatbotIframe">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="js/main.js" type="module"></script>
+  <!-- Fallback chatbot initialization if module fails -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var toggle = document.getElementById('chatbotToggle');
+        var modal = document.getElementById('chatbotModal');
+        var close = document.getElementById('chatbotClose');
+        var content = document.querySelector('.chatbot-content');
+
+        if (toggle && modal && close && !toggle.dataset.listenerAttached) {
+          var focusableSelectors = [
+            'a[href]',
+            'button:not([disabled])',
+            'textarea:not([disabled])',
+            'input:not([type="hidden"]):not([disabled])',
+            'select:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+          ].join(',');
+
+          var lastFocusedElement = null;
+
+          var getFocusableElements = function() {
+            return Array.prototype.slice.call(modal.querySelectorAll(focusableSelectors)).filter(function(el) {
+              return !el.hasAttribute('disabled') && el.getAttribute('tabindex') !== '-1' && el.offsetParent !== null;
+            });
+          };
+
+          var trapFocus = function(event) {
+            if (event.key !== 'Tab' || !modal.classList.contains('active')) return;
+            var focusableEls = getFocusableElements();
+            if (focusableEls.length === 0) {
+              event.preventDefault();
+              close.focus();
+              return;
+            }
+            var firstEl = focusableEls[0];
+            var lastEl = focusableEls[focusableEls.length - 1];
+            if (event.shiftKey && document.activeElement === firstEl) {
+              event.preventDefault();
+              lastEl.focus();
+            } else if (!event.shiftKey && document.activeElement === lastEl) {
+              event.preventDefault();
+              firstEl.focus();
+            }
+          };
+
+          var openChatbot = function(event) {
+            if (event) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            lastFocusedElement = document.activeElement;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            var focusableEls = getFocusableElements();
+            var targetFocus = focusableEls.filter(function(el) { return el !== toggle; })[0] || close;
+            if (targetFocus) {
+              setTimeout(function() { targetFocus.focus(); }, 0);
+            }
+          };
+
+          var closeChatbot = function(event) {
+            if (event) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+              setTimeout(function() { lastFocusedElement.focus(); }, 0);
+            } else {
+              toggle.focus();
+            }
+          };
+
+          toggle.addEventListener('click', openChatbot);
+          close.addEventListener('click', closeChatbot);
+
+          modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+              closeChatbot(e);
+            }
+          });
+
+          if (content) {
+            content.addEventListener('click', function(e) {
+              e.stopPropagation();
+            });
+          }
+
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+              closeChatbot(e);
+            }
+          });
+
+          document.addEventListener('keydown', trapFocus);
+
+          window.chatbotController = {
+            open: openChatbot,
+            close: closeChatbot
+          };
+
+          toggle.dataset.listenerAttached = 'true';
+        }
+      }, 500);
+    });
+  </script>
 </body>
 </html>
