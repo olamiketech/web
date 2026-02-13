@@ -1,0 +1,606 @@
+/* =============================================
+   Responsive Overrides & Fixes (2025-06-23)
+   ---------------------------------------------
+   This stylesheet is loaded AFTER styles.css and
+   therefore safely overrides any conflicting
+   declarations without requiring changes to the
+   large, duplicated base file.
+   ============================================= */
+
+/* Hide outdated project cards accidentally left inside the hero section */
+.hero .project-card {
+  display: none !important;
+}
+
+/* Standardise container width for very large screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* -------------------------------------------------
+   Global Typography & Spacing Tweaks for Small View
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  /* Reduce section padding */
+  .section {
+    padding: 3rem 0;
+  }
+  /* Stack header items neatly */
+  .header .container {
+    padding: 0 1rem;
+  }
+}
+
+/* --------------------------------
+   Projects Section – New Grid Layout
+   -------------------------------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Ensure every project card fills its grid cell */
+.project-card {
+  height: 100%;
+}
+
+/* --------------------------------
+   Contact Section adjustments
+   -------------------------------- */
+@media (min-width: 992px) {
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+@media (max-width: 991px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skip-link accessibility */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  z-index: 2000;
+  transition: left 0.3s ease;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+}
+
+/* Prevent horizontal overflow caused by long words / URLs */
+body {
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+/* Ensure sections are visible even if JavaScript is disabled or slow */
+.section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Disable the animated gradient background on mobile/tablet to speed up paint and reduce battery usage */
+@media (max-width: 991px) {
+  body::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Desktop Navigation Override */
+@media (min-width: 769px) {
+  .nav {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .nav__list {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem !important;
+  }
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile Navigation Override */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  .nav {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease-in-out !important;
+    z-index: 1001 !important;
+  }
+  .nav.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav__list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+  }
+}
+
+/* About Section Mobile Fix */
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  .about__image {
+    max-width: 300px !important;
+    margin: 0 auto 1.5rem !important;
+  }
+  .about__text {
+    text-align: center !important;
+  }
+}
+
+/* ===============================
+   Modern polish bundle (2025-11-05)
+   =============================== */
+
+/* 1. Global tokens & rhythm */
+:root {
+  --space-xs: clamp(0.25rem, 0.6vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.8vw, 0.9rem);
+  --space-md: clamp(1rem, 1.6vw, 1.5rem);
+  --space-lg: clamp(2.5rem, 5vw, 4rem);
+  --space-xl: clamp(4rem, 7vw, 6rem);
+  --neutral-100: #f8fafc;
+  --neutral-200: #eef2ff;
+  --neutral-900: #0f172a;
+  --accent-teal: #14b8a6;
+}
+
+/* Base typography refinements */
+body {
+  font-feature-settings: "liga" 1;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+/* Section scaffolding */
+.section {
+  padding-block: var(--space-xl);
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset-inline: clamp(0%, 5vw, 8%);
+  inset-block-start: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.18), transparent);
+}
+
+/* Section headers */
+.section__title {
+  letter-spacing: -0.02em;
+}
+
+.section__subtitle {
+  margin-top: calc(var(--space-sm) * -1);
+  color: var(--text-light);
+  max-width: 42ch;
+  margin-inline: auto;
+}
+
+/* 2. Header & navigation polish */
+.header {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.65);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+[data-theme="dark"] .header {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.header.is-condensed {
+  box-shadow: 0 12px 24px -18px rgba(15, 23, 42, 0.35);
+}
+
+.nav__list {
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.nav__link::after {
+  bottom: -8px;
+  height: 2px;
+}
+
+.nav__link svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav__link:hover svg,
+.nav__link:focus-visible svg,
+.nav__link.active svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 3. Hero split layout */
+.hero {
+  padding-block: clamp(6rem, 12vw, 9rem);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 233, 252, 0.2) 100%);
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.hero__content {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.hero__title {
+  font-size: clamp(2.75rem, 5vw, 3.4rem);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  margin-bottom: var(--space-md);
+  color: var(--text-light);
+}
+
+.hero__description {
+  max-width: 48ch;
+  margin-bottom: var(--space-md);
+}
+
+.hero__visual {
+  position: relative;
+  border-radius: 1.75rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.25), transparent 65%), var(--bg-secondary);
+  box-shadow: 0 28px 60px -45px rgba(79, 70, 229, 0.55);
+  overflow: hidden;
+}
+
+.hero__visual::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 32px;
+  background: rgba(99, 102, 241, 0.12);
+  filter: blur(40px);
+}
+
+/* Hero badges/metrics (optional wrappers) */
+.hero__meta {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.hero__meta-item {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--neutral-900);
+}
+
+[data-theme="dark"] .hero__meta-item {
+  background: rgba(30, 41, 59, 0.72);
+  color: #e2e8f0;
+}
+
+/* 4. Buttons & CTAs */
+.btn {
+  border-radius: 0.75rem;
+  padding: 0.95rem 1.8rem;
+  letter-spacing: 0.04em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  gap: 0.5rem;
+}
+
+.btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  box-shadow: 0 18px 32px -18px rgba(99, 102, 241, 0.55);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 42px -22px rgba(99, 102, 241, 0.55);
+}
+
+.btn--outline {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: rgba(99, 102, 241, 0.12);
+  transform: translateY(-3px);
+}
+
+/* 5. Skills grid restructuring */
+.skills__grid {
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.skill-category {
+  border-radius: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(248, 250, 252, 0.95) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.4), rgba(20, 184, 166, 0.4));
+}
+
+.skills-list {
+  gap: var(--space-sm);
+}
+
+.skill-item {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-item:hover,
+.skill-item:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -15px rgba(79, 70, 229, 0.55);
+}
+
+/* 6. Projects */
+.projects__grid {
+  gap: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.project-card {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.84), rgba(236, 233, 252, 0.9));
+  border-radius: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  display: grid;
+  gap: var(--space-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -35px rgba(79, 70, 229, 0.55);
+}
+
+.project-card__tags {
+  gap: 0.45rem;
+}
+
+.tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.project-card__links {
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* 7. Contact section */
+.contact__grid {
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.contact__form {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  box-shadow: 0 24px 55px -40px rgba(15, 23, 42, 0.45);
+}
+
+.form__group input,
+.form__group textarea {
+  border-radius: 0.9rem;
+  padding: 1rem 1.25rem;
+  background: rgba(248, 250, 252, 0.85);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form__group input:focus-visible,
+.form__group textarea:focus-visible {
+  border-color: rgba(99, 102, 241, 0.65);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+}
+
+.contact__card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact__card:hover,
+.contact__card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* 8. Chatbot tweaks */
+.chatbot-widget {
+  right: clamp(1rem, 3vw, 2.75rem);
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.chatbot-toggle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  box-shadow: 0 16px 32px -18px rgba(79, 70, 229, 0.6);
+}
+
+.chatbot-toggle:hover,
+.chatbot-toggle:focus-visible {
+  transform: translateY(-3px);
+}
+
+.chatbot-teaser {
+  position: relative;
+  inset-inline-end: 0;
+  padding: 0.85rem 1.1rem;
+  background: rgba(15, 23, 42, 0.92);
+  color: white;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  box-shadow: 0 20px 42px -26px rgba(15, 23, 42, 0.75);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: teaserIn 0.8s ease forwards 1.2s;
+}
+
+@keyframes teaserIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-modal {
+  border-radius: 1.75rem;
+  box-shadow: 0 32px 60px -28px rgba(15, 23, 42, 0.55);
+  width: min(420px, 90vw);
+}
+
+.chatbot-modal.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .chatbot-modal {
+    width: min(100%, 24rem);
+    height: 80vh;
+    inset-block-end: 0;
+    border-radius: 1.4rem 1.4rem 0 0;
+  }
+}
+
+/* 9. Responsive refinements */
+@media (max-width: 992px) {
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero__visual {
+    margin-inline: auto;
+  }
+
+  .nav__link svg {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  .hero__buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact__form {
+    padding: clamp(1.5rem, 5vw, 1.75rem);
+  }
+}
