@@ -13,7 +13,7 @@ export const projects: Project[] = [
         description:
             "LeafDoctor uses cutting-edge artificial intelligence to identify plant diseases instantly, provide tailored treatment recommendations, and help you maintain thriving plants and crops.",
         tags: ["Computer Vision", "Plant Health AI", "Agriculture"],
-        link: "https://leafdoctor.org/",
+        link: "https://leaf-doctor-production.up.railway.app/",
         github: "https://github.com/olamiketech/Leaf-doctor",
     },
     {
