@@ -26,7 +26,7 @@ export function Projects() {
                         title={
                             <div className="flex items-center gap-2">
                                 {project.title}
-                                {project.link && (
+                                {project.link && project.link.trim().length > 0 && (
                                     <Link href={project.link} target="_blank" className="text-muted-foreground hover:text-primary">
                                         <ExternalLink className="h-4 w-4" />
                                     </Link>
@@ -44,14 +44,14 @@ export function Projects() {
                                     ))}
                                 </div>
                                 <div className="flex gap-2 mt-2">
-                                    {project.github && (
+                                    {project.github && project.github.trim().length > 0 && (
                                         <Button variant="outline" size="sm" asChild>
                                             <Link href={project.github} target="_blank">
                                                 <Github className="mr-2 h-4 w-4" /> GitHub
                                             </Link>
                                         </Button>
                                     )}
-                                    {project.link && (
+                                    {project.link && project.link.trim().length > 0 && (
                                         <Button size="sm" asChild>
                                             <Link href={project.link} target="_blank">
                                                 Live Demo
@@ -62,11 +62,25 @@ export function Projects() {
                             </div>
                         }
                         header={
-                            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 items-center justify-center">
-                                <Folder className="h-12 w-12 text-neutral-400" />
+                            <div className={`flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br items-center justify-center
+                                ${i === 0 ? "from-violet-500/20 via-purple-500/20 to-blue-500/20" :
+                                    i === 1 ? "from-emerald-500/20 via-teal-500/20 to-green-500/20" :
+                                        i === 2 ? "from-orange-500/20 via-amber-500/20 to-yellow-500/20" :
+                                            i === 3 ? "from-pink-500/20 via-rose-500/20 to-red-500/20" :
+                                                "from-cyan-500/20 via-sky-500/20 to-blue-500/20"
+                                }`}>
+                                <div className="p-4 bg-background/50 backdrop-blur-sm rounded-full border border-white/10 shadow-sm">
+                                    <Folder className={`h-8 w-8 
+                                        ${i === 0 ? "text-violet-500" :
+                                            i === 1 ? "text-emerald-500" :
+                                                i === 2 ? "text-orange-500" :
+                                                    i === 3 ? "text-pink-500" :
+                                                        "text-cyan-500"
+                                        }`} />
+                                </div>
                             </div>
                         }
-                        className={i === 1 || i === 2 ? "md:col-span-2" : ""}
+                        className={i === 0 || i === 3 ? "md:col-span-2" : i === 4 ? "md:col-span-3" : ""}
                     />
                 ))}
             </BentoGrid>
