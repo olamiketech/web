@@ -9,12 +9,12 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        title: "LeafDoctor",
+        title: "AgriTrade",
         description:
-            "LeafDoctor uses cutting-edge artificial intelligence to identify plant diseases instantly, provide tailored treatment recommendations, and help you maintain thriving plants and crops.",
-        tags: ["Computer Vision", "Plant Health AI", "Agriculture"],
-        link: "https://leaf-doctor-production.up.railway.app/",
-        github: "https://github.com/olamiketech/Leaf-doctor",
+            "AgriTrade Secure enables agricultural exporters to trade safely with verified international buyers. From deal creation to payment settlement, every step is auditable and protected.",
+        tags: ["FinTech", "Trade & Escrow", "Compliance AI"],
+        link: "https://agritrade-production-31d5.up.railway.app/",
+        github: "https://github.com/olamiketech/AgriTrade",
     },
     {
         title: "AgroPredict AI",
